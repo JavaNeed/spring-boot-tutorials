@@ -10,9 +10,11 @@ import org.springframework.stereotype.Controller;
 
 import com.common.model.Category;
 import com.common.model.Customer;
+import com.common.model.Employee;
 import com.common.model.EmployeeTerritory;
 import com.common.service.CategoriesService;
 import com.common.service.CustomersService;
+import com.common.service.EmployeeService;
 import com.common.service.EmployeeTerritoryService;
 
 @Controller
@@ -26,10 +28,19 @@ public class MainController implements CommandLineRunner {
     private CustomersService customersService;
     @Autowired
     private EmployeeTerritoryService etService;
+    @Autowired
+    private EmployeeService empService;
 
 	@Override
 	public void run(String... args) throws Exception {
 		LOGGER.info("~~ STARTED ~~");
+		// For Employee
+		//Employee employee = empService.findByEmployeeId(1);
+		Employee employee = empService.findByFirstNameAndLastName("Nancy", "Davolio");
+		LOGGER.info("EmployeeID   : "+employee.getEmployeeID());
+		LOGGER.info("FirstName    : "+employee.getFirstName());
+		LOGGER.info("LastName     : "+employee.getLastName());
+		
 		Iterable<Category> categoryList = categoriesService.findAllCategories();
 		for (Category category : categoryList) {
 			LOGGER.info("--------------------------------------------");

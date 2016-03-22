@@ -10,14 +10,14 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Category {
 	@Id
 	private ObjectId id;
-	@Field
-	private Integer CategoryID;
-	@Field
-	private String CategoryName;
-	@Field
-	private String Description;
-	@Field
-	private String Picture;
+	@Field("CategoryID")
+	private Integer categoryID;
+	@Field("CategoryName")
+	private String categoryName;
+	@Field("Description")
+	private String description;
+	@Field("Picture")
+	private String picture;
 	@Field
 	private String field4;
 	@Field
@@ -35,28 +35,28 @@ public class Category {
 		this.id = id;
 	}
 	public Integer getCategoryID() {
-		return CategoryID;
+		return categoryID;
 	}
 	public void setCategoryID(Integer categoryID) {
-		CategoryID = categoryID;
+		this.categoryID = categoryID;
 	}
 	public String getCategoryName() {
-		return CategoryName;
+		return categoryName;
 	}
 	public void setCategoryName(String categoryName) {
-		CategoryName = categoryName;
+		this.categoryName = categoryName;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	public String getPicture() {
-		return Picture;
+		return picture;
 	}
 	public void setPicture(String picture) {
-		Picture = picture;
+		this.picture = picture;
 	}
 	public String getField4() {
 		return field4;
