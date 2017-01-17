@@ -7,3 +7,5 @@ on [tests4geeks.com](https://tests4geeks.com/tutorials) about using
 This tutorial builds a really simple car database, and the end product looks like this:
 
 ![car](animation.gif)
+
+App URL: http://localhost:8080/home
